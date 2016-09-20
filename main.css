@@ -1,0 +1,9 @@
+body {
+    font-family: Open Sans Condensed,Arial,Helvetica,sans-serif;
+    padding: 20px;
+}
+
+#input, #output {
+    width: 600px;
+    height: 200px;
+}
