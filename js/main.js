@@ -18,13 +18,8 @@ $(document).ready(function() {
                 params.img_alt = $(noscript).find('img').attr('alt');
 
                 params.img_1_src = noscript.match(/src='([^']+)'/)[1];
-                try {
-                    params.dashboard_src = he.decode(input.match(/<param name='name'\s+value='([^']+)' \/>/)[1]);
-                } catch (err) {
-                    console.log("warn: error while finding dashboard_src");
-                    console.log(err);
-                }
-                
+                params.dashboard_src = he.decode(input.match(/<param name='name'\s+value='([^']+)' \/>/)[1]);
+
                 var output = template;
                 Object.keys(params).forEach(function(key) {
                     var val = params[key];
@@ -34,7 +29,7 @@ $(document).ready(function() {
 
                 $('#output').text(output);
             } catch (err) {
-                $('#output').text('Error');
+                $('#output').text('');
                 console.log(err);
             }
         });
